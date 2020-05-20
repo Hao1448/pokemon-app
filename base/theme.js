@@ -16,10 +16,11 @@ export const GlobalTheme = {
         white: '#FFFFFF',
     },
     fonts: {
-        primary: `'Cormorant', sans-serif`,
+        primary: `'PT Sans', sans-serif`,
         sizes: {
             h1: '54px',
             h1_mobile: '42px',
+            h4: '24px',
             p: '18px'
         }
     }

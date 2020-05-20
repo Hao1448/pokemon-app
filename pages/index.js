@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../base/styles'
 import { GlobalTheme } from '../base/theme'
-import { Header } from '../components'
+import { Header, WidgetCards } from '../components'
 
 
 export default function Home() {
@@ -11,6 +11,7 @@ export default function Home() {
         <Wrapper>
           <GlobalStyle/>
           <Header/>
+          <WidgetCards/>
         </Wrapper>
       </ThemeProvider>
     </AppWrapper>

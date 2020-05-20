@@ -22,6 +22,10 @@ const h1_mobile = ({ theme }) => css`
     line-height: 1.1;
     font-size: ${theme.fonts.sizes.h1_mobile};
 `
+const h2 = ({ theme }) => css`
+    ${h};
+    font-size: ${theme.fonts.sizes.h2};
+`
 
 const p = ({ theme }) => css`
     font-family: ${theme.fonts.primary};
@@ -34,5 +38,6 @@ const p = ({ theme }) => css`
 export {
     h1,
     h1_mobile,
+    h2,
     p
 }
