@@ -1,5 +1,9 @@
 import CardPokemon from './CardPokemon'
 import Header from './Header'
 import Container from './Container'
+import Grid from './Grid'
 
-export { CardPokemon, Container, Header}
+export * from './Widget'
+
+
+export { Grid, Container, Header, CardPokemon }
