@@ -1,5 +1,17 @@
 import { css } from 'styled-components'
 
+
+const h = ({ theme }) => css`
+    font-family: ${theme.fonts.primary};
+    color: ${theme.color.black};
+    line-height: 1.15;
+    margin: 30px 0 0;
+    
+    &:first-child {
+        margin-top: 0;
+    }
+`
+
 const h1 = ({ theme }) => css`
     ${h};
     font-size: ${theme.fonts.sizes.h1};
