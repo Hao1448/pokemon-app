@@ -11,8 +11,9 @@ export const GlobalStyle = createGlobalStyle`
 	} */}
 
 	body {	
-		font-family: 'Cormorant';
+		font-family: 'PT Sans';
 		background: ${p => p.theme.color.background};
+		padding: 40px 0;
 	}
 
 `
