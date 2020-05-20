@@ -20,6 +20,7 @@ const Wrapper = styled.div`
 `
 const Title = styled.div`
     ${h1};
+    text-align: center;
 `
 
 export default Header
