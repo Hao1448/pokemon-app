@@ -3,7 +3,8 @@ import styled from 'styled-components'
 const CardPokemon = () => {
     return (
         <Wrapper>
-            
+            <Image/>
+            <Title>Pickachu</Title>
         </Wrapper>
     )
 }
@@ -13,5 +14,11 @@ const Wrapper = styled.div`
     width: 200px;
     background-color: red;
 `
+
+const Title = styled.div`
+
+`
+
+const Image = styled.img``
 
 export default CardPokemon
