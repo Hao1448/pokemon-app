@@ -30,7 +30,6 @@ const WidgetCards = () => {
     const filteredPokemons = pokemons.filter(pokemon => {
         return !search || pokemon.name.indexOf(search) != -1;
     })
-    
     return (
         <Wrapper>
             <Container> 
