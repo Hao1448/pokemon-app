@@ -11,7 +11,7 @@ export const GlobalTheme = {
     color: {
         primary: '#C32243',
         background: '#FAFAFA',
-        secondary: '#B9E6FF',
+        secondary: '#FF0066',
         black: '#333333',
         white: '#FFFFFF',
     },
