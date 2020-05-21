@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components'
 import { GlobalTheme } from '../../base/theme'
+import { GlobalStyle } from '../../base/styles'
 import breakpoint from 'styled-components-breakpoint'
-import { Container, Grid } from '../../components'
+import { Container, Grid, Button } from '../../components'
 import { h1, h2, p } from '../../base/mixins/text'
+import Link from 'next/link';
 
 
 export const getServerSideProps = ({params: {id}}) => {
@@ -23,17 +25,20 @@ export default ({id}) => {
     if(!pokemon) {
         return 'Loading...'
     }
-    console.log(pokemon)
     return ( 
         <Wrapper>
             <ThemeProvider theme={GlobalTheme}>
+            <GlobalStyle/>
                 <Container>
                     <Grid>
+                        <ButtonWrap>
+                            <Button/>
+                        </ButtonWrap>
                         <Img src={"https://pokeres.bastionbot.org/images/pokemon/" + pokemon.id + ".png"}/>
-                        <Info>  
-                            <Title>{pokemon.name}</Title>   
-                            <RowType>
-                                Type
+                        <Title>{pokemon.name}</Title>  
+                        <Info>   
+                            <Row>
+                            <RowTitle>Type</RowTitle>
                                 <Types>
                                     {pokemon.types.map((type) => {
                                         return ( 
@@ -41,9 +46,9 @@ export default ({id}) => {
                                         )
                                     })}
                                 </Types>
-                            </RowType>
-                            <RowStats>
-                                Base stats
+                            </Row>
+                            <Row>
+                                <RowTitle>Base stats</RowTitle>
                                 {pokemon.stats.map((stat) => {
                                     return ( 
                                         <Stat>
@@ -52,16 +57,20 @@ export default ({id}) => {
                                         </Stat>
                                     )
                                 })}
-                            </RowStats>
-                            <AbilitiesData>
-                                Abilitites
-                                {pokemon.abilities.map((ability) => {
-                                    return ( 
-                                        <Type>{ability.ability.name}</Type>
-                                    )
-                                })}
-                            </AbilitiesData>
-                            
+                            </Row>
+                            <Row>
+                                <RowTitle>Moves</RowTitle>
+                                <Moves>
+                                    {pokemon.moves.map((move) => {
+                                        console.log(move)
+                                        return ( 
+                                            <Link href={`/move/${id}`}>
+                                                <Move move={move.move}>{move.move.name}</Move>
+                                            </Link>
+                                        )
+                                    })}
+                                </Moves>
+                            </Row>
                         </Info> 
                     </Grid>
                 </Container>
@@ -78,42 +87,82 @@ const Title = styled.div`
     color: ${p => p.theme.color.secondary};
     text-transform: capitalize;
     margin: 0;
-    grid-column: span 6;
-    grid-row: 2;
+    grid-column: 5 / span 4;
+    grid-row: 1;
+    text-align: center;
+    margin-bottom: 10px;
+    ${breakpoint('xs', 'sm')`
+        grid-column: span 12;
+    `}
 `
 
 const Img = styled.img`
-    grid-column: 2 / span 4;
-    grid-row: 1;
+    grid-column: 3 / span 4;
+    grid-row: 2;
     align-self: center;
     max-width: 100%;
+    ${breakpoint('xs', 'sm')`
+        grid-column: span 12;
+    `}
 `
 
 const Info = styled.div`
-    grid-column: span 3;
+    grid-column: span 4;
+    grid-row: 2;
+    background-color: ${p => p.theme.color.background};
+    border-radius: 30px;
+    padding: 30px;
+    ${breakpoint('xs', 'sm')`
+        grid-column: span 12;
+        grid-row: 3;
+    `}
 `
 
 const Type = styled.div`
-    /* ${p}; */
+    ${p};
     text-align: center;
     width: 100%;
 `
-const RowType = styled.div`
-    ${h2};
-    text-align: center;
+
+const Move = styled.div`
+    ${p};
+    display: flex;
+    background-color: ${p => p.theme.color.secondary};
+    padding: 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    &:hover{
+        background-color: ${p => p.theme.color.primary};
+    }
 `
-const RowStats = styled.div`
+
+const ButtonWrap = styled.div`
+    grid-column: span 2;
+    ${breakpoint('xs', 'sm')`
+        grid-column: span 12;
+        grid-row: 4;
+    `}
+`
+
+const Row = styled.div`
     ${h2};
     text-align: center;
 `
 
+const RowTitle = styled.div`
+    margin-bottom: 10px;
+`
+
+const Moves = styled.div`
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+`
 const Types = styled.div`
     display: flex;
     justify-content: space-around;
-`
-const AbilitiesData = styled.div`
-    ${h2};
-    text-align: center;
 `
 const Stat = styled.div`
     display: flex;
