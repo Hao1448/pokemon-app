@@ -20,7 +20,7 @@ export const GlobalTheme = {
         sizes: {
             h1: '54px',
             h1_mobile: '42px',
-            h4: '24px',
+            h2: '24px',
             p: '18px'
         }
     }
