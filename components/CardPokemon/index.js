@@ -9,9 +9,7 @@ const CardPokemon = ({name, id, img}) => {
          <LinkWrapper>
             <Image src={img}/>
             <Title>
-                <Text>
-                    <a>{name}</a>
-                </Text>
+                <Text>{name}</Text>
             </Title>
             </LinkWrapper>
             </Link>
@@ -38,6 +36,7 @@ const Title = styled.div`
 
 const Text = styled.div`
     ${h2};
+    text-transform: capitalize;
     color: ${p => p.theme.color.primary};
     margin: 0;
 `
