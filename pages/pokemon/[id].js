@@ -42,7 +42,7 @@ export default ({id}) => {
                                 <Types>
                                     {pokemon.types.map((type) => {
                                         return ( 
-                                            <Type>{type.type.name}</Type>       
+                                            <Type key={type.type.url}>{type.type.name}</Type>       
                                         )
                                     })}
                                 </Types>
@@ -50,8 +50,9 @@ export default ({id}) => {
                             <Row>
                                 <RowTitle>Base stats</RowTitle>
                                 {pokemon.stats.map((stat) => {
+                                    console.log(stat)
                                     return ( 
-                                        <Stat>
+                                        <Stat key={stat.stat.url}>
                                             <Type>{stat.stat.name}</Type>
                                             <Type>{stat.base_stat}</Type>
                                         </Stat>
@@ -62,10 +63,9 @@ export default ({id}) => {
                                 <RowTitle>Moves</RowTitle>
                                 <Moves>
                                     {pokemon.moves.map((move) => {
-                                        console.log(move)
                                         return ( 
-                                            <Link href={`/move/${id}`}>
-                                                <Move move={move.move}>{move.move.name}</Move>
+                                            <Link key={move.move.url} href={`/move/${id}`}>
+                                                <Move move={move.move.name}>{move.move.name}</Move>
                                             </Link>
                                         )
                                     })}

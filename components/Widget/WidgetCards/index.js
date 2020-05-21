@@ -40,7 +40,7 @@ const WidgetCards = () => {
                     {
                         filteredPokemons.map(({name, id, img}) => {
                             return (
-                                <CardWrapper>
+                                <CardWrapper key={id}>
                                     <CardPokemon {...{name, id, img}} />
                                 </CardWrapper>
                             )
