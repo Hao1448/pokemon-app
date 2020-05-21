@@ -10,7 +10,7 @@ export const GlobalTheme = {
     },
     color: {
         primary: '#C32243',
-        background: '#FAFAFA',
+        background: '#fff0f5',
         secondary: '#FF0066',
         black: '#333333',
         white: '#FFFFFF',
@@ -19,7 +19,6 @@ export const GlobalTheme = {
         primary: `'PT Sans', sans-serif`,
         sizes: {
             h1: '54px',
-            h1_mobile: '42px',
             h2: '24px',
             p: '18px'
         }

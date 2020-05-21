@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 
 	body {	
 		font-family: 'PT Sans';
-		padding: 40px 0;
+		padding: 20px 0;
 	}
 
 `

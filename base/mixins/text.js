@@ -17,11 +17,6 @@ const h1 = ({ theme }) => css`
     font-size: ${theme.fonts.sizes.h1};
 `
 
-const h1_mobile = ({ theme }) => css`
-    ${h};
-    line-height: 1.1;
-    font-size: ${theme.fonts.sizes.h1_mobile};
-`
 const h2 = ({ theme }) => css`
     ${h};
     font-size: ${theme.fonts.sizes.h2};
@@ -37,7 +32,6 @@ const p = ({ theme }) => css`
 
 export {
     h1,
-    h1_mobile,
     h2,
     p
 }
