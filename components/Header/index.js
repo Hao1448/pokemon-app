@@ -21,6 +21,7 @@ const Wrapper = styled.div`
 const Title = styled.div`
     ${h1};
     text-align: center;
+    color: ${p => p.theme.color.primary};
 `
 
 export default Header
