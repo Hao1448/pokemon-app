@@ -14,5 +14,8 @@
     "react-is": "^16.13.1",
     "styled-components": "^5.1.0",
     "styled-components-breakpoint": "^2.1.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
   }
 }
