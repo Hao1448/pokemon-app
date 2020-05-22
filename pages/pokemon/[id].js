@@ -122,7 +122,7 @@ const Info = styled.div`
 `
 
 const Type = styled.div`
-    ${p};
+    margin-bottom: 10px;
     text-align: center;
     width: 100%;
 `
@@ -155,7 +155,7 @@ const Row = styled.div`
 `
 
 const RowTitle = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 `
 
 const Moves = styled.div`
