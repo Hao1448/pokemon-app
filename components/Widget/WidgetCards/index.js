@@ -33,9 +33,12 @@ const WidgetCards = () => {
     return (
         <Wrapper>
             <Container> 
+            <Row>
                 <Grid>
                     <Input value={search} onChange={e => setSearch(e.target.value)} />
                 </Grid>
+            </Row>
+            <Row>
                 <Grid gap="50px 20px">
                     {
                         filteredPokemons.map(({name, id, img}) => {
@@ -47,6 +50,7 @@ const WidgetCards = () => {
                         })
                     }
                 </Grid>
+            </Row>
             </Container>  
         </Wrapper>
     )
@@ -56,7 +60,7 @@ const WidgetCards = () => {
 const Wrapper = styled.div`
     padding: 40px 0;
 `
-
+const Row = styled.div``
 const CardWrapper = styled.div`
     grid-column: span 3;
     justify-self: center;
