@@ -1,1 +1,1 @@
-Test
+Press "npm run dev" to start!
