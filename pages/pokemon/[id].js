@@ -50,10 +50,10 @@ export default ({id}) => {
                             <Row>
                                 <RowTitle>Base stats</RowTitle>
                                 {pokemon.stats.map((stat) => {
-                                    console.log(stat)
+                                    let statName = stat.stat.name.replace('-', ' ');
                                     return ( 
                                         <Stat key={stat.stat.url}>
-                                            <Type>{stat.stat.name}</Type>
+                                            <Type>{statName}</Type>
                                             <Type>{stat.base_stat}</Type>
                                         </Stat>
                                     )
@@ -65,9 +65,10 @@ export default ({id}) => {
                                     {pokemon.moves.map((move) => {
                                         let splited = move.move.url.split('/');
                                         let moveId= splited[splited.length - 2]
+                                        let moveName = move.move.name.replace('-', ' ');
                                         return ( 
                                             <Link key={move.move.url} href={`/move/${moveId}`}>
-                                                <Move move={move.move.name}>{move.move.name}</Move>
+                                                <Move>{moveName}</Move>
                                             </Link>
                                         )
                                     })}
