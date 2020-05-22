@@ -63,8 +63,10 @@ export default ({id}) => {
                                 <RowTitle>Moves</RowTitle>
                                 <Moves>
                                     {pokemon.moves.map((move) => {
+                                        let splited = move.move.url.split('/');
+                                        let moveId= splited[splited.length - 2]
                                         return ( 
-                                            <Link key={move.move.url} href={`/move/${id}`}>
+                                            <Link key={move.move.url} href={`/move/${moveId}`}>
                                                 <Move move={move.move.name}>{move.move.name}</Move>
                                             </Link>
                                         )
